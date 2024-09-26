@@ -5,12 +5,16 @@ import { AppService } from './app.service';
 export class AppController {
   constructor(private readonly productsService: AppService) {}
 
-  @Get()
+  @Get('all')
   async getAllProducts() {
     return await this.productsService.getProducts();
   }
-  @Get()
+  @Get('test')
   getHello(): string {
     return this.productsService.getHello();
+  }
+  @Get('categories')
+  getCategory(){
+    return this.productsService.getCategory();
   }
 }

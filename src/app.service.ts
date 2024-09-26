@@ -26,4 +26,11 @@ export class AppService {
   getHello(): string {
     return 'Hello World!';
   }
+  async getCategory(){
+    const {data, error} = await this.supabase.from('Category').select('id, name');
+    if (error){
+      throw new Error(error.message);
+    }
+    return data; 
+  }
 }
