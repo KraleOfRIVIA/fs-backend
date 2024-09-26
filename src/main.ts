@@ -9,9 +9,10 @@ async function bootstrap() {
 
   // Enable CORS
   app.enableCors({
-    origin: 'http://server.botoforge.ru',
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    credentials: true,
+    origin: 'http://server.botoforge.ru', // Replace with your frontend URL
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', // Allowed methods
+    allowedHeaders: 'Content-Type, Authorization', // Allowed headers
+    credentials: true, // Allow credentials (cookies, authorization headers, etc.)
   });
 
   await app.listen(3000);
