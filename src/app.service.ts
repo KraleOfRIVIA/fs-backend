@@ -15,7 +15,7 @@ export class AppService {
   async getProducts() {
     const { data, error } = await this.supabase
       .from('ProductData')
-      .select('id, price, name, image, weight, description');
+      .select('id, price, name, image, weight, description, category');
 
     if (error) {
       throw new Error(error.message);
