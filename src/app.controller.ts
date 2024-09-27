@@ -1,7 +1,7 @@
 import { Controller, Get } from '@nestjs/common';
 import { AppService } from './app.service';
 
-@Controller('products')
+@Controller('api/products')
 export class AppController {
   constructor(private readonly productsService: AppService) {}
 
@@ -14,7 +14,7 @@ export class AppController {
     return this.productsService.getHello();
   }
   @Get('categories')
-  getCategory(){
+  getCategory() {
     return this.productsService.getCategory();
   }
 }
